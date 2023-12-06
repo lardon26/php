@@ -1,26 +1,34 @@
 <?php
 
 namespace app\model\repository;
+
+
+    use app\controller\Product;
+    use app\model\entity\ProductEntity;
+
     class MemoryProductRepository implements ProductRepositoryInterface
 {
 
     public function findAll(): array
     {
-        //TODO
-
+        $p1 = new ProductEntity();
+        $p2 = new ProductEntity();
+        return array(
+            new Product("1", "p1",10.0,1),
+            new Product("2", "p2",20.0,2));
     }
 
-        public function add(\app\model\entity\ProductEntity $product): \app\model\entity\ProductEntity
+        public function add(ProductEntity $product): ProductEntity
         {
             // TODO: Implement add() method.
         }
 
-        public function findById(int $id): ?\app\model\entity\ProductEntity
+        public function findById(int $id): ?ProductEntity
         {
             // TODO: Implement findById() method.
         }
 
-        public function update(int $id, \app\model\entity\ProductEntity $product): \app\model\entity\ProductEntity
+        public function update(int $id, ProductEntity $product): ProductEntity
         {
             // TODO: Implement update() method.
         }
